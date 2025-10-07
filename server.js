@@ -255,10 +255,11 @@ app.get("/preview/:templateName", (req, res) => {
   res.render(templateName, data);
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`\n✅ Server running at http://localhost:${PORT}`);
-  console.log(`📧 View all templates: http://localhost:${PORT}\n`);
+const PORT = process.env.PORT || 10000;
+const HOST = "0.0.0.0"; // Important for Render
+
+app.listen(PORT, HOST, () => {
+  console.log(`✅ Server running on ${HOST}:${PORT}`);
 });
 
 module.exports = app;
