@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Request</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f4f4f4;">
+    <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f4f4f4; padding: 20px;">
+        <tr>
+            <td align="center">
+                <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <!-- Header -->
+                    <tr>
+                        <td style="background-color: #FF5722; padding: 30px; text-align: center;">
+                            <h1 style="color: #ffffff; margin: 0; font-size: 28px;">Return Request Received</h1>
+                        </td>
+                    </tr>
+                    <!-- Content -->
+                    <tr>
+                        <td style="padding: 40px 30px;">
+                            <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
+                                Hello <strong>{{name}}</strong>,
+                            </p>
+                            <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
+                                We have received your return request and our team will review it shortly.
+                            </p>
+                            <table width="100%" cellpadding="0" cellspacing="0" style="margin: 20px 0;">
+                                <tr>
+                                    <td style="padding: 20px; background-color: #fbe9e7; border-left: 4px solid #FF5722; border-radius: 5px;">
+                                        <p style="margin: 0 0 10px 0; color: #666666; font-size: 14px;"><strong>Return Request ID:</strong></p>
+                                        <p style="margin: 0 0 15px 0; color: #333333; font-size: 18px; font-weight: bold;">{{returnId}}</p>
+                                        <p style="margin: 0 0 10px 0; color: #666666; font-size: 14px;"><strong>Order ID:</strong></p>
+                                        <p style="margin: 0 0 15px 0; color: #333333; font-size: 16px;">{{orderId}}</p>
+                                        {{#if requestDate}}
+                                        <p style="margin: 0 0 10px 0; color: #666666; font-size: 14px;"><strong>Request Date:</strong></p>
+                                        <p style="margin: 0 0 15px 0; color: #333333; font-size: 16px;">{{requestDate}}</p>
+                                        {{/if}}
+                                        {{#if items}}
+                                        <p style="margin: 0 0 10px 0; color: #666666; font-size: 14px;"><strong>Items:</strong></p>
+                                        <p style="margin: 0; color: #333333; font-size: 16px;">{{items}}</p>
+                                        {{/if}}
+                                    </td>
+                                </tr>
+                            </table>
+                            {{#if reason}}
+                            <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 10px 0;">
+                                <strong>Return Reason:</strong>
+                            </p>
+                            <p style="color: #666666; font-size: 14px; line-height: 1.6; margin: 0 0 20px 0; padding: 15px; background-color: #f8f8f8; border-radius: 5px;">
+                                {{reason}}
+                            </p>
+                            {{/if}}
+                            <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
+                                We'll notify you once your return request has been reviewed and approved.
+                            </p>
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td align="center" style="padding: 10px 0;">
+                                        <a href="{{returnLink}}" style="display: inline-block; padding: 15px 40px; background-color: #FF5722; color: #ffffff; text-decoration: none; border-radius: 5px; font-size: 16px; font-weight: bold;">Track Return Status</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Footer -->
+                    <tr>
+                        <td style="background-color: #f8f8f8; padding: 20px 30px; text-align: center; border-top: 1px solid #e0e0e0;">
+                            <p style="color: #999999; font-size: 14px; margin: 0;">
+                                Best regards,<br>
+                                <strong>The Glubery Team</strong>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

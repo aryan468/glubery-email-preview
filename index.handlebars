@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glubery Email Templates</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container { max-width: 1400px; margin: 0 auto; }
+    h1 {
+      color: white;
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    .subtitle {
+      color: rgba(255,255,255,0.95);
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .count {
+      display: block;
+      text-align: center;
+      background: rgba(255,255,255,0.2);
+      padding: 10px 20px;
+      border-radius: 25px;
+      color: white;
+      font-size: 1rem;
+      max-width: 250px;
+      margin: 0 auto 40px;
+      backdrop-filter: blur(10px);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      border-top: 5px solid;
+    }
+    .card:hover { transform: translateY(-8px); }
+    .card-header { padding: 24px; }
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    .card-description {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.5;
+    }
+    .card-footer {
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fafafa;
+    }
+    .card-path {
+      font-size: 0.85rem;
+      color: #999;
+      font-family: monospace;
+    }
+    .badge {
+      padding: 8px 16px;
+      background: #667eea;
+      color: white;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📧 Glubery Email Templates</h1>
+    <p class="subtitle">Click any template to preview in browser</p>
+    <span class="count">{{templates.length}} Templates Available</span>
+    
+    <div class="grid">
+      {{#each templates}}
+      <a href="/preview/{{this.path}}" class="card" target="_blank" style="border-top-color: {{this.color}};">
+        <div class="card-header">
+          <div class="card-title">{{this.name}}</div>
+          <div class="card-description">{{this.description}}</div>
+        </div>
+        <div class="card-footer">
+          <div class="card-path">/preview/{{this.path}}</div>
+          <span class="badge">View →</span>
+        </div>
+      </a>
+      {{/each}}
+    </div>
+  </div>
+</body>
+</html>
