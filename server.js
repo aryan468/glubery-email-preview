@@ -43,7 +43,7 @@ const templateData = {
     email: "admin@glubery.com",
     orderId: "ORD-2025-10-001",
     orderLink: "https://glubery.com/admin/orders/ORD-2025-10-001",
-    customerName: "Sneha Reddy", // ← CHANGE THIS
+    employeeName: "Sneha Reddy",
     totalAmount: "₹4,850.00",
     requestDate: "7th October 2025, 11:30 AM",
   },
@@ -104,20 +104,6 @@ const templateData = {
     updateDate: "7th October 2025",
     message:
       "Your return has been approved. A credit note or revised invoice will be issued within 48 hours of item verification.",
-    refundAmount: "₹1,890.00",
-  },
-
-  return_status_update: {
-    name: "Arjun Verma",
-    email: "[email protected]",
-    returnId: "RET-2025-10-002",
-    orderId: "ORD-2025-09-020",
-    newStatus: "Approved - Refund Initiated",
-    returnLink: "https://glubery.com/returns/RET-2025-10-002",
-    previousStatus: "Under Review",
-    updateDate: "7th October 2025",
-    message:
-      "Your return has been approved. Refund will be credited within 5-7 business days.",
     refundAmount: "₹1,890.00",
   },
 
