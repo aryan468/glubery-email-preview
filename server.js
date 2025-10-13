@@ -220,7 +220,9 @@ app.get("/preview/:templateName", (req, res) => {
 
   res.render(templateName, data);
 });
-
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
 const PORT = process.env.PORT || 10000;
 const HOST = "0.0.0.0"; // Important for Render
 
