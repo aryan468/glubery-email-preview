@@ -4,20 +4,24 @@ This document describes the Handlebars email templates and their expected data p
 
 ## Template List
 
-### 1. welcome.handlebars
+### 1. welcome.handlebars (no chnage)
+
 **Purpose:** Welcome new users and verify their email address.
 
 **Required Data:**
+
 - `name` (string) - User's name
 - `email` (string) - User's email
 - `link` (string) - Email verification link
 
 ---
 
-### 2. password_reset_otp.handlebars
+### 2. password_reset_otp.handlebars (no change)
+
 **Purpose:** Send OTP code for password reset.
 
 **Required Data:**
+
 - `name` (string) - User's name
 - `email` (string) - User's email
 - `otp` (string/number) - One-time password code
@@ -26,9 +30,13 @@ This document describes the Handlebars email templates and their expected data p
 ---
 
 ### 3. employee_registration.handlebars
+
+(Updated welcome text from "You have been registered as an employee at Glubery" to "Welcome aboard! Your account has been successfully created on Glubery.in")
+
 **Purpose:** Welcome new employees and provide account setup link.
 
 **Required Data:**
+
 - `name` (string) - Employee's name
 - `email` (string) - Employee's email
 - `setupLink` (string) - Account setup link
@@ -38,23 +46,29 @@ This document describes the Handlebars email templates and their expected data p
 ---
 
 ### 4. order_request.handlebars
+
+(Changed field name from customerName to employeeName)
+
 **Purpose:** Notify about new order requests awaiting review.
 
 **Required Data:**
+
 - `name` (string) - Recipient's name
 - `email` (string) - Recipient's email
 - `orderId` (string) - Order ID
 - `orderLink` (string) - Link to order details
-- `customerName` (string) - Customer name (optional)
+- `employeeName` (string) - Employee name (optional)
 - `totalAmount` (string) - Order total amount (optional)
 - `requestDate` (string) - Request date (optional)
 
 ---
 
-### 5. order_approved.handlebars
+### 5. order_approved.handlebars (no change)
+
 **Purpose:** Notify customer that their order has been approved.
 
 **Required Data:**
+
 - `name` (string) - Customer's name
 - `email` (string) - Customer's email
 - `orderId` (string) - Order ID
@@ -67,23 +81,28 @@ This document describes the Handlebars email templates and their expected data p
 ---
 
 ### 6. order_rejected.handlebars
+
+(Removed entire reason field and "If you have any questions..." text)
+
 **Purpose:** Notify customer that their order has been rejected.
 
 **Required Data:**
+
 - `name` (string) - Customer's name
 - `email` (string) - Customer's email
 - `orderId` (string) - Order ID
 - `contactLink` (string) - Link to contact support
 - `rejectedBy` (string) - Name of person who rejected (optional)
 - `rejectionDate` (string) - Rejection date (optional)
-- `reason` (string) - Reason for rejection (optional)
 
 ---
 
-### 7. order_status_update.handlebars
+### 7. order_status_update.handlebars (no chnage)
+
 **Purpose:** Notify about order status changes.
 
 **Required Data:**
+
 - `name` (string) - Customer's name
 - `email` (string) - Customer's email
 - `orderId` (string) - Order ID
@@ -96,10 +115,12 @@ This document describes the Handlebars email templates and their expected data p
 
 ---
 
-### 8. payment_status_update.handlebars
+### 8. payment_status_update.handlebars (no chnage)
+
 **Purpose:** Notify about payment status changes.
 
 **Required Data:**
+
 - `name` (string) - Customer's name
 - `email` (string) - Customer's email
 - `orderId` (string) - Order ID
@@ -113,10 +134,12 @@ This document describes the Handlebars email templates and their expected data p
 
 ---
 
-### 9. return_request.handlebars
+### 9. return_request.handlebars (no chnage)
+
 **Purpose:** Confirm receipt of return request.
 
 **Required Data:**
+
 - `name` (string) - Customer's name
 - `email` (string) - Customer's email
 - `returnId` (string) - Return request ID
@@ -129,9 +152,13 @@ This document describes the Handlebars email templates and their expected data p
 ---
 
 ### 10. return_status_update.handlebars
+
+(just sample message changed no feild chnaged)
+
 **Purpose:** Notify about return status changes.
 
 **Required Data:**
+
 - `name` (string) - Customer's name
 - `email` (string) - Customer's email
 - `returnId` (string) - Return request ID
@@ -146,9 +173,13 @@ This document describes the Handlebars email templates and their expected data p
 ---
 
 ### 11. credit_note_issuance.handlebars
-**Purpose:** Notify about new credit note issued to account.
+
+( Changed "your account" to "your company" and removed auto-apply text)
+
+**Purpose:** Notify about new credit note issued to company account.
 
 **Required Data:**
+
 - `name` (string) - Customer's name
 - `email` (string) - Customer's email
 - `creditNoteId` (string) - Credit note ID
@@ -161,41 +192,18 @@ This document describes the Handlebars email templates and their expected data p
 
 ---
 
-### 12. credit_note_usage.handlebars
-**Purpose:** Notify when credit note is applied to an order.
-
-**Required Data:**
-- `name` (string) - Customer's name
-- `email` (string) - Customer's email
-- `creditNoteId` (string) - Credit note ID
-- `orderId` (string) - Order ID where credit was applied
-- `amountUsed` (string) - Amount of credit used
-- `orderLink` (string) - Link to order details
-- `remainingBalance` (string) - Remaining credit balance (optional)
-- `usageDate` (string) - Usage date (optional)
-- `orderTotal` (string) - Final order total (optional)
-- `orderSubtotal` (string) - Order subtotal before credit (optional)
+### 12. credit_note_usage.handlebars ( not applicable)
 
 ---
 
-### 13. credit_note_revocation.handlebars
-**Purpose:** Notify about credit note revocation.
-
-**Required Data:**
-- `name` (string) - Customer's name
-- `email` (string) - Customer's email
-- `creditNoteId` (string) - Credit note ID
-- `amount` (string) - Original credit note amount
-- `supportLink` (string) - Link to contact support
-- `revocationDate` (string) - Revocation date (optional)
-- `issueDate` (string) - Original issue date (optional)
-- `reason` (string) - Reason for revocation (optional)
+### 13. credit_note_revocation.handlebars ( not applicable)
 
 ---
 
 ## Common Features
 
 All templates include:
+
 - Responsive HTML design that works on desktop and mobile
 - Consistent branding with color-coded headers for different email types
 - Professional layout with clear call-to-action buttons
@@ -206,6 +214,7 @@ All templates include:
 ## Color Scheme
 
 Each template uses a distinct color for easy identification:
+
 - Welcome: Green (#4CAF50)
 - Password Reset: Orange (#FF9800)
 - Employee Registration: Blue (#2196F3)
@@ -217,5 +226,42 @@ Each template uses a distinct color for easy identification:
 - Return Request: Deep Orange (#FF5722)
 - Return Status: Deep Purple (#673AB7)
 - Credit Note Issuance: Cyan (#00BCD4)
-- Credit Note Usage: Light Green (#8BC34A)
-- Credit Note Revocation: Brown (#795548)
+
+## Tech Stack
+
+- **Backend:** Node.js + Express.js
+- **Template Engine:** Handlebars
+- **Hosting:** Render (Free Tier)
+- **Version Control:** Git + GitHub
+
+A Node.js/Express.js email template preview server using Handlebars, deployed on Render.
+
+**Live Preview:** https://glubery-email-preview.onrender.com
+
+---
+
+## Quick Start
+
+### Local Development
+
+1. Install dependencies: `npm install`
+2. Start server: `npm start`
+3. Open: `http://localhost:3000`
+
+### Making Changes
+
+1. Edit `.handlebars` files
+2. Update sample data in `server.js` if needed
+3. Test locally: `npm start`
+4. Deploy: `git add . && git commit -m "changes" && git push`
+
+Render auto-deploys in 1-2 minutes.
+
+### Render Notes
+
+- Sleeps after 15min (first load takes 30-60s)
+- 750 hours/month (unlimited with sleep mode)
+- Auto-deploys on every `git push`
+- No expiration
+
+**Key:** Binds to `0.0.0.0` (Render requirement), uses `process.env.PORT`, views set to `__dirname`

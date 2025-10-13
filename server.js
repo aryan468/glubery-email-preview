@@ -40,10 +40,10 @@ const templateData = {
 
   order_request: {
     name: "Admin Team",
-    email: "[email protected]",
+    email: "admin@glubery.com",
     orderId: "ORD-2025-10-001",
     orderLink: "https://glubery.com/admin/orders/ORD-2025-10-001",
-    customerName: "Sneha Reddy",
+    customerName: "Sneha Reddy", // ← CHANGE THIS
     totalAmount: "₹4,850.00",
     requestDate: "7th October 2025, 11:30 AM",
   },
@@ -61,12 +61,11 @@ const templateData = {
 
   order_rejected: {
     name: "Karan Mehta",
-    email: "[email protected]",
+    email: "karan.mehta@email.com",
     orderId: "ORD-2025-10-002",
     contactLink: "https://glubery.com/support",
     rejectedBy: "Operations Team",
     rejectionDate: "7th October 2025",
-    reason: "Product currently out of stock. Please check back in 3-5 days.",
   },
 
   order_status_update: {
@@ -94,15 +93,18 @@ const templateData = {
     receiptLink: "https://glubery.com/receipts/PAY-2025-10-004",
   },
 
-  return_request: {
-    name: "Neha Kapoor",
-    email: "[email protected]",
-    returnId: "RET-2025-10-001",
-    orderId: "ORD-2025-09-015",
-    returnLink: "https://glubery.com/returns/RET-2025-10-001",
-    requestDate: "7th October 2025",
-    items: "2x Organic Tomatoes, 1x Fresh Spinach",
-    reason: "Product quality not as expected",
+  return_status_update: {
+    name: "Arjun Verma",
+    email: "arjun.verma@email.com",
+    returnId: "RET-2025-10-002",
+    orderId: "ORD-2025-09-020",
+    newStatus: "Approved - Refund Initiated",
+    returnLink: "https://glubery.com/returns/RET-2025-10-002",
+    previousStatus: "Under Review",
+    updateDate: "7th October 2025",
+    message:
+      "Your return has been approved. A credit note or revised invoice will be issued within 48 hours of item verification.",
+    refundAmount: "₹1,890.00",
   },
 
   return_status_update: {
@@ -129,30 +131,6 @@ const templateData = {
     issueDate: "7th October 2025",
     expiryDate: "7th January 2026",
     reason: "Compensation for delayed delivery",
-  },
-
-  credit_note_usage: {
-    name: "Sanjay Kumar",
-    email: "[email protected]",
-    creditNoteId: "CN-2025-09-015",
-    orderId: "ORD-2025-10-005",
-    amountUsed: "₹300.00",
-    orderLink: "https://glubery.com/orders/ORD-2025-10-005",
-    remainingBalance: "₹200.00",
-    usageDate: "7th October 2025",
-    orderTotal: "₹1,850.00",
-    orderSubtotal: "₹2,150.00",
-  },
-
-  credit_note_revocation: {
-    name: "Meera Iyer",
-    email: "[email protected]",
-    creditNoteId: "CN-2025-08-010",
-    amount: "₹750.00",
-    supportLink: "https://glubery.com/support",
-    revocationDate: "7th October 2025",
-    issueDate: "15th August 2025",
-    reason: "Credit note expired without usage",
   },
 };
 
@@ -223,18 +201,6 @@ const templates = [
     path: "credit_note_issuance",
     color: "#00BCD4",
     description: "New credit note issued",
-  },
-  {
-    name: "Credit Note Usage",
-    path: "credit_note_usage",
-    color: "#8BC34A",
-    description: "Credit applied to order",
-  },
-  {
-    name: "Credit Note Revocation",
-    path: "credit_note_revocation",
-    color: "#795548",
-    description: "Credit note revoked",
   },
 ];
 
